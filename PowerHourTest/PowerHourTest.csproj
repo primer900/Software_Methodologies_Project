@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>f93ff7d5-68ae-47e8-8961-e97e879f79c4</ProjectGuid>
+    <ProjectGuid>{44E7FB0E-C60A-4D39-B5A1-60648703F463}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>PowerHourTest</RootNamespace>
