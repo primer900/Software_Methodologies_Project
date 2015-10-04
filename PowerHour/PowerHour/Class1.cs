@@ -8,5 +8,6 @@ namespace PowerHour
 {
     class Class1
     {
+		// Comment to test commits.
     }
 }
