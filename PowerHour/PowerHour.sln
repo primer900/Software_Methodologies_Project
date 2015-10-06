@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Express 2013 for Windows Desktop
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PowerHour", "PowerHour\PowerHour.csproj", "{FE2D1D99-7433-476B-9F38-8A026097F818}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PowerHourTest", "..\PowerHourTest\PowerHourTest.csproj", "{44E7FB0E-C60A-4D39-B5A1-60648703F463}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FE2D1D99-7433-476B-9F38-8A026097F818}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE2D1D99-7433-476B-9F38-8A026097F818}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE2D1D99-7433-476B-9F38-8A026097F818}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE2D1D99-7433-476B-9F38-8A026097F818}.Release|Any CPU.Build.0 = Release|Any CPU
+		{44E7FB0E-C60A-4D39-B5A1-60648703F463}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{44E7FB0E-C60A-4D39-B5A1-60648703F463}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{44E7FB0E-C60A-4D39-B5A1-60648703F463}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{44E7FB0E-C60A-4D39-B5A1-60648703F463}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
