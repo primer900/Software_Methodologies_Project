@@ -1,0 +1,16 @@
+{
+    "name": "root/workspace",
+    "authors": [
+        {
+            "name": "Gleb Sklyr",
+            "email": "gleb.sklyr@mu.edu"
+        }
+    ],
+    "require": {
+        "monolog/monolog": "^1.16",
+        "slim/slim": "^2.6",
+        "twig/twig": "^1.20",
+        "slim/slim-skeleton": "^2.1",
+        "swiftmailer/swiftmailer": "^5.4"
+    }
+}

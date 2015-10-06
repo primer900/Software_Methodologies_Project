@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+    {% block head %}
+    <meta charset = "utf-8">
+    <title> GasDay | COEN2610 </title>
+    <link rel="stylesheet" href="stylesheets/normalize.css">
+    <link rel="stylesheet" href="stylesheets/all.css">
+    <link rel="stylesheet" href="stylesheets/all-rtl.css">
+    <link rel="stylesheet" href="stylesheets/asciidoctor.css">
+    {% endblock head %}
+  </head>
+  
+  <body>
+    
+    <header>
+
+      
+      <nav>
+        {% block nav %}
+
+        <h1>WELCOME TO GASDAY</h1>
+        <h2>We predict stuff for you</h2>
+      <nav>
+        <ul>
+          <a<li>Contact</li>
+	  <li>Info</li>
+        </ul>
+    {% endblock nav %}
+      </nav>
+     
+
+    </header>
+
+
+    
+    {% block content %}
+    {% endblock content %}
+       
+
+      <footer id="footer">
+        {% block footer %}
+        <a href="http://twitter.com"><img src="imgf/twitter-wrap.png" alt="Twitter Logo" id="tw"></a>
+        <a href="http://facebook.com"><img src="imgf/facebook-wrap.png" alt="facebook Logo" id="fb"></a>
+        <a href="About.html"><p>&copy; 2015 Povinelli</p></a>
+        {% endblock footer %}
+      </footer>
+
+
+      
+      
+    
+  </body>
+  
+  
+</html>
