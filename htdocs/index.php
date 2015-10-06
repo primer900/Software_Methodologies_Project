@@ -37,7 +37,7 @@
   })->name('weather');
 
   $app->get('/homeerror', function() use($app){
-    $app->render('homeerror.html');
+    $app->render('homeerror.twig');
   })->name('homeerror');
 
 
