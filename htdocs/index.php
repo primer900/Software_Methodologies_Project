@@ -97,7 +97,7 @@
      // $app->redirect('/sell');
    // }
 
-	if(($password=='gleb')&&($email=='fsklyr@gmail.com'))
+	if(($password=='gleb' || $password=='chris')&&($email=='fsklyr@gmail.com' || $email=='cjprocak13@gmail.com')) 
 		{  $app->redirect('/w');}
 	else {$app->redirect('/homeerror');}
 
