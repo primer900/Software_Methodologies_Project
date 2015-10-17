@@ -1,1 +1,2 @@
 C:\Users\Chris Procak\Documents\GitHub\Software_Methodologies_Project\PowerHour\PowerHour\bin\Debug\PowerHour.exe.config
+C:\Users\Jakob\Desktop\software_methodologies_project\PowerHour\PowerHour\bin\Debug\PowerHour.exe.config
