@@ -10,33 +10,9 @@
         <h1>Weather for you</h1>
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 		<script src="http://code.highcharts.com/highcharts.js"></script>
+		  <script src="javascript/Graph.js"></script>
 		<div id="container" style="width:100%; height:400px;"></div>
 		<script>
-		$(function () {
-			$('#container').highcharts({
-				chart: {
-					type: 'bar'
-				},
-				title: {
-					text: 'Electrical Usage'
-				},
-				xAxis: {
-					categories: ['Monday', 'Tuesday', 'Wednesday']
-				},
-				yAxis: {
-					title: {
-						text: 'Usage for this week ($)'
-					}
-				},
-				series: [{
-					name: 'User 1',
-					data: [1, 0, 4]
-				}, {
-					name: 'User 2',
-					data: [5, 7, 3]
-				}]
-			});
-		});
 		</script>
 <span style="display: block !important; width: 320px; text-align: center; font-family: sans-serif; font-size: 12px;">
 <a href="http://www.wunderground.com/cgi-bin/findweather/getForecast?query=zmw:53233.1.99999&bannertypeclick=wu_clean2day" title="Milwaukee, Wisconsin Weather Forecast" target="_blank">
