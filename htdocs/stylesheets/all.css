@@ -7,6 +7,9 @@
 .left {
   display: inline;
 }
+.right{
+  float: right;
+}
 /* line 22, /home/bitrock/git/apachefriends-web/source-xampp-windows/stylesheets/all.scss */
 .top-bar .name h1 a {
   font-size: 0.8em; }
