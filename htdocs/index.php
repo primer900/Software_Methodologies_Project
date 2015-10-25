@@ -44,6 +44,10 @@
      $app->render('temperature.twig');
   })->name('temperature');
 
+  $app->get('/wind-speed', function() use($app){
+     $app->render('wind_speed.twig');
+  })->name('wind_speed');
+
 
 
   //ADD ALL THE PAGES/////
