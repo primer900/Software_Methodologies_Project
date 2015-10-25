@@ -40,6 +40,10 @@
     $app->render('homeerror.twig');
   })->name('homeerror');
 
+  $app->get('/temperature', function() use($app) {
+     $app->render('temperature.twig');
+  })->name('temperature');
+
 
 
   //ADD ALL THE PAGES/////
