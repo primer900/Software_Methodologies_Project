@@ -3,6 +3,21 @@
   date_default_timezone_set("America/Chicago");
   require "vendor/autoload.php";
 
+  require_once "dropbox-sdk/Dropbox/autoload.php";
+  use \Dropbox as dbx;
+
+  $accessToken = "RhUHA_3bYAsAAAAAAAAAKFPP6W9Sv3yhCVVCun37FpkqOYSDvIYPanrtRw1GOFG7";
+  $dbxClient = new dbx\Client($accessToken, "Software_Methodologies_App");
+
+  $f = fopen("app.txt", "rb");
+  $result = $dbxClient->uploadFile("/Software_Methodologies/Input/app.txt", dbx\WriteMode::force(), $f);
+  fclose($f);
+
+  $f = fopen("forecast.csv", "w+b");
+  $fileMetadata = $dbxClient->getFile("/Software_Methodologies/Output/forecasted.csv", $f);
+  fclose($f);
+  //print_r($fileMetadata);
+
 //  use Monolog\Logger;
 //  use Monolog\Handler\StreamHandler;
 //
@@ -105,7 +120,7 @@
      // $app->redirect('/sell');
    // }
 
-	if(($password=='gleb' || $password=='chris')&&($email=='fsklyr@gmail.com' || $email=='cjprocak13@gmail.com')) 
+	if(($password=='gleb' || $password=='chris')&&($email=='fsklyr@gmail.com' || $email=='cjprocak13@gmail.com'))
 		{  $app->redirect('/w');}
 	else {$app->redirect('/homeerror');}
 
