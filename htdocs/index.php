@@ -120,7 +120,7 @@
      // $app->redirect('/sell');
    // }
 
-	if(($password=='gleb' || $password=='chris')&&($email=='fsklyr@gmail.com' || $email=='cjprocak13@gmail.com'))
+	if(($password=='gleb' && $email=='fsklyr@gmail.com')||( $password=='chris'&& $email=='cjprocak13@gmail.com')||($password=='jakob'&&$email=='jakob.horner@marquette.edu'))
 		{  $app->redirect('/w');}
 	else {$app->redirect('/homeerror');}
 
