@@ -67,24 +67,18 @@
 
   //ADD ALL THE PAGES/////
 $app->post('/w', function() use($app){
-  if(isset($_POST['filename'])){
+
+  $accessToken = "RhUHA_3bYAsAAAAAAAAAKFPP6W9Sv3yhCVVCun37FpkqOYSDvIYPanrtRw1GOFG7";
+  $dbxClient = new dbx\Client($accessToken, "Software_Methodologies_App");
+  if(isset($_POST["filename"])){
     //include($_POST['parse_csv.php'].'/common/configs/config_templates.inc.php');
     $column_headers = array();
     $row_count = 0;
     $upload_csv = "Software_Methodologies_Project/htdocs/actual.csv";
-    $handle = fopen("actual.csv", "r");
-    while (($data = fgetcsv($handle, 100000, ",")) !== FALSE)
-    {
-      if ($row_count==0)
-      {
-        $column_headers = $data;
-      }
-      else
-      {
-        print_r($data);
-      }
-      ++$row_count;
-    }
+    echo $_POST["filename"];
+    $handle = fopen($_POST["filename"], "rb");
+    $result = $dbxClient->uploadFile("/Software_Methodologies/Input/actual.csv", dbx\WriteMode::force(), $handle);
+    fclose($handle);
   }
 });
   //POST TO MAIL/////
