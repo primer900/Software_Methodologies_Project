@@ -66,7 +66,27 @@
 
 
   //ADD ALL THE PAGES/////
-
+$app->post('/w', function() use($app){
+  if(isset($_POST['filename'])){
+    //include($_POST['parse_csv.php'].'/common/configs/config_templates.inc.php');
+    $column_headers = array();
+    $row_count = 0;
+    $upload_csv = "Software_Methodologies_Project/htdocs/actual.csv";
+    $handle = fopen("actual.csv", "r");
+    while (($data = fgetcsv($handle, 100000, ",")) !== FALSE)
+    {
+      if ($row_count==0)
+      {
+        $column_headers = $data;
+      }
+      else
+      {
+        print_r($data);
+      }
+      ++$row_count;
+    }
+  }
+});
   //POST TO MAIL/////
 
   //CAPTURE VARIABLES FROM FORM
@@ -120,7 +140,7 @@
      // $app->redirect('/sell');
    // }
 
-	if(($password=='gleb' && $email=='fsklyr@gmail.com')||( $password=='chris'&& $email=='cjprocak13@gmail.com')||($password=='jakob'&&$email=='jakob.horner@marquette.edu'))
+	if(($password=='gleb' && $email=='fsklyr@gmail.com')||( $password=='chris'&& $email=='cjprocak13@gmail.com')||($password=='jakob'&&$email=='jakob.horner@marquette.edu')||( $password=='connor'&& $email=='brinkcon@gmail.com'))
 		{  $app->redirect('/w');}
 	else {$app->redirect('/homeerror');}
 
