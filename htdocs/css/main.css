@@ -456,6 +456,12 @@ label {
   color: #384047;
 }
 
+label.loginLabel{
+  font-size: 200%;
+  color: #ddd5d4;
+  text-align: left;
+}
+
 label.light {
   font-weight: 300;
  
