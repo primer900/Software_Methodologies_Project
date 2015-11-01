@@ -72,12 +72,31 @@ $app->post('/w', function() use($app){
   $dbxClient = new dbx\Client($accessToken, "Software_Methodologies_App");
   if(isset($_POST["filename"])){
     //include($_POST['parse_csv.php'].'/common/configs/config_templates.inc.php');
-    $column_headers = array();
-    $row_count = 0;
-    $upload_csv = "Software_Methodologies_Project/htdocs/actual.csv";
-    echo $_POST["filename"];
-    $handle = fopen($_POST["filename"], "rb");
-    $result = $dbxClient->uploadFile("/Software_Methodologies/Input/actual.csv", dbx\WriteMode::force(), $handle);
+
+    $delimiter = ',';
+    if(!file_exists("actual.csv") || !is_readable("actual.csv"))
+      return FALSE;
+
+    $header = NULL;
+    $data = array();
+    if (($handle = fopen('C:\xampp\htdocs\Software_Methodologies_Project\htdocs\actual.csv', 'r')) !== FALSE)
+    {
+      while (($row = fgetcsv($handle, 1000, $delimiter)) !== FALSE)
+      {
+        if(!$header)
+          $header = $row;
+        else
+          print_r(array_combine($header, $row));
+      }
+      fclose($handle);
+    }
+    //$column_headers = array();
+    //$row_count = 0;
+    //$upload_csv = "Software_Methodologies_Project/htdocs/actual.csv";
+    //echo $_POST["filename"];
+    //$handle = fopen($_POST["filename"], "rb");
+    //$result = $dbxClient->uploadFile("/Software_Methodologies/Input/actual.csv", dbx\WriteMode::force(), $handle);
+
     fclose($handle);
   }
 });
