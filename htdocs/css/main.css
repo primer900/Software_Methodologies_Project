@@ -474,7 +474,10 @@ label:hover{color: #e8eeef;}
 }
 #reset:hover{color: #3ac162;}
 
-legend{color: #384047;}
+legend{
+  color: #ddd5d4;
+  background-color: transparent;
+}
 #used{margin-bottom: 20px;}
 label.chbx{margin-left:0px;}
 #totop{font-size: 30px;}
