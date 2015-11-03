@@ -73,7 +73,6 @@ $app->post('/w', function() use($app){
 
     if(isset($_POST["filename"])) {
       //include($_POST['parse_csv.php'].'/common/configs/config_templates.inc.php');
-
       function csv_to_array($filename='', $delimiter = ',') {
       if (!file_exists($filename) || !is_readable($filename))
         return FALSE;
