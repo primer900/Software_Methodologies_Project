@@ -70,15 +70,40 @@ $app->post('/w', function() use($app){
 
   $accessToken = "RhUHA_3bYAsAAAAAAAAAKFPP6W9Sv3yhCVVCun37FpkqOYSDvIYPanrtRw1GOFG7";
   $dbxClient = new dbx\Client($accessToken, "Software_Methodologies_App");
-  if(isset($_POST["filename"])){
-    //include($_POST['parse_csv.php'].'/common/configs/config_templates.inc.php');
-    $column_headers = array();
-    $row_count = 0;
-    $upload_csv = "Software_Methodologies_Project/htdocs/actual.csv";
-    echo $_POST["filename"];
-    $handle = fopen($_POST["filename"], "rb");
-    $result = $dbxClient->uploadFile("/Software_Methodologies/Input/actual.csv", dbx\WriteMode::force(), $handle);
-    fclose($handle);
+
+    if(isset($_POST["filename"])) {
+      //include($_POST['parse_csv.php'].'/common/configs/config_templates.inc.php');
+      function csv_to_array($filename='', $delimiter = ',') {
+      if (!file_exists($filename) || !is_readable($filename))
+        return FALSE;
+
+      $header = NULL;
+      if (($handle = fopen($filename, 'r')) !== FALSE) {
+        while (($row = fgetcsv($handle, 1000, $delimiter)) !== FALSE) {
+          if (!$header) {
+            $header = $row;
+            for ($c = 0; $c < count($header); $c++)
+              echo $header[$c] . "&nbsp" . "&nbsp";
+            echo "<br />\n";
+          } else {
+            for ($c = 0; $c < count($row); $c++) {
+              echo $row[$c] . "&nbsp" . "&nbsp";
+            }
+          }
+          echo "<br />\n";
+          //print_r(array_combine($header, $row));
+        }
+      }
+      fclose($handle);
+    }
+      $filename = 'C:\xampp\htdocs\Software_Methodologies_Project\htdocs\actual.csv';
+      csv_to_array($filename);
+  //$column_headers = array();
+    //$row_count = 0;
+    //$upload_csv = "Software_Methodologies_Project/htdocs/actual.csv";
+    //echo $_POST["filename"];
+    //$handle = fopen($_POST["filename"], "rb");
+    //$result = $dbxClient->uploadFile("/Software_Methodologies/Input/actual.csv", dbx\WriteMode::force(), $handle);
   }
 });
   //POST TO MAIL/////
