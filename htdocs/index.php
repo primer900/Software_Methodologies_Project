@@ -64,63 +64,12 @@
   })->name('wind_speed');
 
 
-
-  //ADD ALL THE PAGES/////
-
-  //POST TO MAIL/////
-
   //CAPTURE VARIABLES FROM FORM
   $app->post('/', function() use($app){
     $password = $app->request->post('user_password');
     $email = $app->request->post('user_email');
 
-    //if(!empty($address)){exit;}
-    
-   // $img;
-    
-    // IMG IDK WHAT THIS FOR...///////////////////////////////////
-//    $imagename = $_FILES['photo']['name'];
-//    $unique_id = md5(uniqid(rand(), true));
-//    $filetype = strrchr($imagename, '.');
-//    $new_upload = 'upload' . $unique_id . $filetype;
-//    move_uploaded_file($_FILES['photo']['tmp_name'], $new_upload);
-    //////////////////////////////////////////////////////////////
-    
-    //TEST FOR EMPTY NECCASSARY ELEMENTS
-   // if(!empty($emil)&&!empty($password)) {
-   //   $cleanName = filter_var($password, FILTER_SANITIZE_STRING);
-   //   $cleanEmail = filter_var($email, FILTER_SANITIZE_EMAIL);
-
-   // } else {
-      //message that there was an error and redirect back
-    //  $app->flash('fail', 'Please make sure that at least name, email, computer type & condition fields are completed.');
-    //  $app->redirect('/sell');
-   // }
-    
-    //SET UP MAILER
-   // $transport = Swift_SendmailTransport::newInstance('/usr/sbin/sendmail -bs');
-   // $mailer = \Swift_Mailer::newInstance($transport);
-    
-    //SET UP THE MESSAGGE
-   // $message = \Swift_Message::newInstance();
-   // $message->setSubject('BuyBack request');
-   // $message->setFrom(array($cleanEmail => $cleanName));
-   // $message->setTo(array('customer_service@slicetheprices.com'));
-   // $message->setBody($cleanBio.' '.$type.' '.$cleanSerial.' '.$condition.' '.print_r($damages,true));//WHAT IS IN THE MESSAGE
-    
-   // $result = $mailer->send($message);//0 if not sent
-    //DECIDE WHAT TO DO IF SENT (OR NOT)
-   // if($result > 0) {
-      //send thankyou + redirect
-    //  $app->flash('success', 'Thanks, '.$cleanName.'.  You have successfully submitted the buyback form!  A representative will get back to you shortly to '.$cleanEmail.' with further information.');
-    // $app->redirect('/');
-   // } else {
-      //send a faliure message, redirect & log
-     // $app->flash('fail', 'Something went wrong.  Please try again later.');
-     // $app->redirect('/sell');
-   // }
-
-	if(($password=='gleb' && $email=='fsklyr@gmail.com')||( $password=='chris'&& $email=='cjprocak13@gmail.com')||($password=='jakob'&&$email=='jakob.horner@marquette.edu'))
+	if(($password=='gleb' || $password=='chris')&&($email=='fsklyr@gmail.com' || $email=='cjprocak13@gmail.com'))
 		{  $app->redirect('/w');}
 	else {$app->redirect('/homeerror');}
 
