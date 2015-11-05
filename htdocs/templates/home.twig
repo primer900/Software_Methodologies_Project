@@ -2,28 +2,29 @@
 {% extends 'main.twig' %}
 
     {% block content %}
-      <div>
+    <div>
         
         <p>Enter Your Info to login</p>
       
 
 	<form action="" method="post">
-
-            <fieldset>
+        <fieldset>
             <legend>Personal info</legend>
-          
-          	<label for="password">Password: </label>
-          	<input type="password" id="password" name="user_password">
-          
-          	<label for="mail">Email: </label>
-         	<input type="email" id="mail" name="user_email">
-            </fieldset>
-    
-	  <button type="reset" id="reset">Clear Form</button>
-          <button type="submit">Send Form!</button>
+            <label class="loginLabel"for="mail">Email: </label>
+            <input type="email" id="mail" name="user_email">
 
-        </form>
+
+            <label class="loginLabel" for="password">Password: </label>
+            <input type="password" id="password" name="user_password">
+          
+
+        </fieldset>
+    
+	  <button type="reset" id="reset">Clear</button>
+      <button type="submit">Login</button>
+
+    </form>
       
-        </div>
+    </div>
     {% endblock content %}
        
