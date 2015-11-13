@@ -73,29 +73,7 @@ $app->post('/w', function() use($app){
 
     if(isset($_POST["filename"])) {
       //include($_POST['parse_csv.php'].'/common/configs/config_templates.inc.php');
-      function csv_to_array($filename='', $delimiter = ',') {
-      if (!file_exists($filename) || !is_readable($filename))
-        return FALSE;
-
-      $header = NULL;
-      if (($handle = fopen($filename, 'r')) !== FALSE) {
-        while (($row = fgetcsv($handle, 1000, $delimiter)) !== FALSE) {
-          if (!$header) {
-            $header = $row;
-            for ($c = 0; $c < count($header); $c++)
-              echo $header[$c] . "&nbsp" . "&nbsp";
-            echo "<br />\n";
-          } else {
-            for ($c = 0; $c < count($row); $c++) {
-              echo $row[$c] . "&nbsp" . "&nbsp";
-            }
-          }
-          echo "<br />\n";
-          //print_r(array_combine($header, $row));
-        }
-      }
-      fclose($handle);
-    }
+      include 'C:\xampp\htdocs\Software_Methodologies_Project\htdocs\templates\parse_csv.php';
       $filename = 'C:\xampp\htdocs\Software_Methodologies_Project\htdocs\actual.csv';
       csv_to_array($filename);
   //$column_headers = array();
