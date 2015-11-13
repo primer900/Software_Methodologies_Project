@@ -16,7 +16,7 @@ before_script:
     - mailcatcher --smtp-port 4456
 
 script:
-    - phpunit --verbose
+    - phpunit.phar --verbose
 
 matrix:
   allow_failures:
