@@ -57,20 +57,14 @@ function csv_get_load($filename='', $delimiter = ',') {
         while (($row = fgetcsv($handle, 1000, $delimiter)) !== FALSE) {
             if (!$header) {
                 $header = $row;
-                //for ($c = 0; $c < count($header); $c++)
-                    //echo $header[$c] . "&nbsp" . "&nbsp";
-                //echo "<br />\n";
             } else {
                 for ($c = 0; $c < count($row); $c++) {
-                    //echo $row[$c] . "&nbsp" . "&nbsp";
                     if ($c == 2)
                     {
                         $load[] = floatval($row[$c]);
                     }
                 }
             }
-            //echo "<br />\n";
-            //print_r(array_combine($header, $row));
         }
     }
     fclose($handle);
@@ -88,20 +82,14 @@ function csv_get_date($filename='', $delimiter = ',') {
         while (($row = fgetcsv($handle, 1000, $delimiter)) !== FALSE) {
             if (!$header) {
                 $header = $row;
-                //for ($c = 0; $c < count($header); $c++)
-                //echo $header[$c] . "&nbsp" . "&nbsp";
-                //echo "<br />\n";
             } else {
                 for ($c = 0; $c < count($row); $c++) {
-                    //echo $row[$c] . "&nbsp" . "&nbsp";
                     if ($c == 0)
                     {
                         $date[] = $row[$c];
                     }
                 }
             }
-            //echo "<br />\n";
-            //print_r(array_combine($header, $row));
         }
     }
     fclose($handle);
@@ -119,20 +107,14 @@ function csv_get_time($filename='', $delimiter = ',') {
         while (($row = fgetcsv($handle, 1000, $delimiter)) !== FALSE) {
             if (!$header) {
                 $header = $row;
-                //for ($c = 0; $c < count($header); $c++)
-                //echo $header[$c] . "&nbsp" . "&nbsp";
-                //echo "<br />\n";
             } else {
                 for ($c = 0; $c < count($row); $c++) {
-                    //echo $row[$c] . "&nbsp" . "&nbsp";
                     if ($c == 1)
                     {
                         $time[] = $row[$c];
                     }
                 }
             }
-            //echo "<br />\n";
-            //print_r(array_combine($header, $row));
         }
     }
     fclose($handle);
@@ -150,20 +132,14 @@ function csv_get_temp($filename='', $delimiter = ',') {
         while (($row = fgetcsv($handle, 1000, $delimiter)) !== FALSE) {
             if (!$header) {
                 $header = $row;
-                //for ($c = 0; $c < count($header); $c++)
-                //echo $header[$c] . "&nbsp" . "&nbsp";
-                //echo "<br />\n";
             } else {
                 for ($c = 0; $c < count($row); $c++) {
-                    //echo $row[$c] . "&nbsp" . "&nbsp";
                     if ($c == 3)
                     {
                         $temp[] = floatval($row[$c]);
                     }
                 }
             }
-            //echo "<br />\n";
-            //print_r(array_combine($header, $row));
         }
     }
     fclose($handle);
@@ -181,26 +157,16 @@ function csv_get_wind($filename='', $delimiter = ',') {
         while (($row = fgetcsv($handle, 1000, $delimiter)) !== FALSE) {
             if (!$header) {
                 $header = $row;
-                //for ($c = 0; $c < count($header); $c++)
-                //echo $header[$c] . "&nbsp" . "&nbsp";
-                //echo "<br />\n";
             } else {
                 for ($c = 0; $c < count($row); $c++) {
-                    //echo $row[$c] . "&nbsp" . "&nbsp";
                     if ($c == 4)
                     {
                         $wind[] = floatval($row[$c]);
                     }
                 }
             }
-            //echo "<br />\n";
-            //print_r(array_combine($header, $row));
         }
     }
     fclose($handle);
     return $wind;
 }
-
-    //$json = json_encode(csv_to_array('actual.csv'));
-    //echo $json;
-//
