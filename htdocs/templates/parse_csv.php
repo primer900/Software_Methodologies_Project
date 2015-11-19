@@ -39,6 +39,168 @@ function csv_to_array($filename='', $delimiter = ',') {
       fclose($handle);
     }
 
+/**
+ * This function gets the load column of a csv and returns it as an array.
+ * Sample function execution:
+*   $load = csv_get_load("forecast.csv");
+*    for ($c = 0; $c < count($load); $c++) {
+*        echo $load[$c] . "<br />\n";
+*    }
+ */
+function csv_get_load($filename='', $delimiter = ',') {
+    if (!file_exists($filename) || !is_readable($filename))
+        return FALSE;
+
+    $header = NULL;
+    $load = array();
+    if (($handle = fopen($filename, 'r')) !== FALSE) {
+        while (($row = fgetcsv($handle, 1000, $delimiter)) !== FALSE) {
+            if (!$header) {
+                $header = $row;
+                //for ($c = 0; $c < count($header); $c++)
+                    //echo $header[$c] . "&nbsp" . "&nbsp";
+                //echo "<br />\n";
+            } else {
+                for ($c = 0; $c < count($row); $c++) {
+                    //echo $row[$c] . "&nbsp" . "&nbsp";
+                    if ($c == 2)
+                    {
+                        $load[] = floatval($row[$c]);
+                    }
+                }
+            }
+            //echo "<br />\n";
+            //print_r(array_combine($header, $row));
+        }
+    }
+    fclose($handle);
+    return $load;
+}
+
+
+function csv_get_date($filename='', $delimiter = ',') {
+    if (!file_exists($filename) || !is_readable($filename))
+        return FALSE;
+
+    $header = NULL;
+    $date = array();
+    if (($handle = fopen($filename, 'r')) !== FALSE) {
+        while (($row = fgetcsv($handle, 1000, $delimiter)) !== FALSE) {
+            if (!$header) {
+                $header = $row;
+                //for ($c = 0; $c < count($header); $c++)
+                //echo $header[$c] . "&nbsp" . "&nbsp";
+                //echo "<br />\n";
+            } else {
+                for ($c = 0; $c < count($row); $c++) {
+                    //echo $row[$c] . "&nbsp" . "&nbsp";
+                    if ($c == 0)
+                    {
+                        $date[] = $row[$c];
+                    }
+                }
+            }
+            //echo "<br />\n";
+            //print_r(array_combine($header, $row));
+        }
+    }
+    fclose($handle);
+    return $date;
+}
+
+
+function csv_get_time($filename='', $delimiter = ',') {
+    if (!file_exists($filename) || !is_readable($filename))
+        return FALSE;
+
+    $header = NULL;
+    $time = array();
+    if (($handle = fopen($filename, 'r')) !== FALSE) {
+        while (($row = fgetcsv($handle, 1000, $delimiter)) !== FALSE) {
+            if (!$header) {
+                $header = $row;
+                //for ($c = 0; $c < count($header); $c++)
+                //echo $header[$c] . "&nbsp" . "&nbsp";
+                //echo "<br />\n";
+            } else {
+                for ($c = 0; $c < count($row); $c++) {
+                    //echo $row[$c] . "&nbsp" . "&nbsp";
+                    if ($c == 1)
+                    {
+                        $time[] = $row[$c];
+                    }
+                }
+            }
+            //echo "<br />\n";
+            //print_r(array_combine($header, $row));
+        }
+    }
+    fclose($handle);
+    return $time;
+}
+
+
+function csv_get_temp($filename='', $delimiter = ',') {
+    if (!file_exists($filename) || !is_readable($filename))
+        return FALSE;
+
+    $header = NULL;
+    $temp = array();
+    if (($handle = fopen($filename, 'r')) !== FALSE) {
+        while (($row = fgetcsv($handle, 1000, $delimiter)) !== FALSE) {
+            if (!$header) {
+                $header = $row;
+                //for ($c = 0; $c < count($header); $c++)
+                //echo $header[$c] . "&nbsp" . "&nbsp";
+                //echo "<br />\n";
+            } else {
+                for ($c = 0; $c < count($row); $c++) {
+                    //echo $row[$c] . "&nbsp" . "&nbsp";
+                    if ($c == 3)
+                    {
+                        $temp[] = floatval($row[$c]);
+                    }
+                }
+            }
+            //echo "<br />\n";
+            //print_r(array_combine($header, $row));
+        }
+    }
+    fclose($handle);
+    return $temp;
+}
+
+
+function csv_get_wind($filename='', $delimiter = ',') {
+    if (!file_exists($filename) || !is_readable($filename))
+        return FALSE;
+
+    $header = NULL;
+    $wind = array();
+    if (($handle = fopen($filename, 'r')) !== FALSE) {
+        while (($row = fgetcsv($handle, 1000, $delimiter)) !== FALSE) {
+            if (!$header) {
+                $header = $row;
+                //for ($c = 0; $c < count($header); $c++)
+                //echo $header[$c] . "&nbsp" . "&nbsp";
+                //echo "<br />\n";
+            } else {
+                for ($c = 0; $c < count($row); $c++) {
+                    //echo $row[$c] . "&nbsp" . "&nbsp";
+                    if ($c == 4)
+                    {
+                        $wind[] = floatval($row[$c]);
+                    }
+                }
+            }
+            //echo "<br />\n";
+            //print_r(array_combine($header, $row));
+        }
+    }
+    fclose($handle);
+    return $wind;
+}
+
     //$json = json_encode(csv_to_array('actual.csv'));
     //echo $json;
 //

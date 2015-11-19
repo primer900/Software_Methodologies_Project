@@ -1,4 +1,5 @@
 <?php
+  include 'C:\xampp\htdocs\Software_Methodologies_Project\htdocs\templates\parse_csv.php';
 
   date_default_timezone_set("America/Chicago");
   require "vendor/autoload.php";
@@ -9,15 +10,21 @@
   $accessToken = "RhUHA_3bYAsAAAAAAAAAKFPP6W9Sv3yhCVVCun37FpkqOYSDvIYPanrtRw1GOFG7";
   $dbxClient = new dbx\Client($accessToken, "Software_Methodologies_App");
 
+// This section uploads app.txt to the Dropbox. This is just a test of the upload, it serves no other purpose.
   $f = fopen("app.txt", "rb");
   $result = $dbxClient->uploadFile("/Software_Methodologies/Input/app.txt", dbx\WriteMode::force(), $f);
   fclose($f);
 
+// This section gets actual.csv from the input folder and saves it locally so it can be used elsewhere more easily
+  $f = fopen("actual.csv", "w+b");
+  $fileMetadata = $dbxClient->getFile("/Software_Methodologies/Input/actual.csv", $f);
+  fclose($f);
+
+// This section gets forecasted.csv from the output folder and saves it locally so it can be used elsewhere more easily
   $f = fopen("forecast.csv", "w+b");
   $fileMetadata = $dbxClient->getFile("/Software_Methodologies/Output/forecasted.csv", $f);
   fclose($f);
 
-  $data = csv_to_array("");
   //print_r($fileMetadata);
 
 //  use Monolog\Logger;
@@ -75,7 +82,6 @@ $app->post('/w', function() use($app){
 
     if(isset($_POST["filename"])) {
       //include($_POST['parse_csv.php'].'/common/configs/config_templates.inc.php');
-      include 'C:\xampp\htdocs\Software_Methodologies_Project\htdocs\templates\parse_csv.php';
       $filename = 'C:\xampp\htdocs\Software_Methodologies_Project\htdocs\actual.csv';
       csv_to_array($filename);
   }
@@ -88,7 +94,7 @@ $app->post('/w', function() use($app){
     $password = $app->request->post('user_password');
     $email = $app->request->post('user_email');
 
-	if(($password=='gleb' && $email=='fsklyr@gmail.com')||( $password=='chris'&& $email=='cjprocak13@gmail.com')||($password=='jakob'&&$email=='jakob.horner@marquette.edu')||( $password=='connor'&& $email=='brinkcon@gmail.com'))
+	if(($password=='gleb' && $email=='fsklyr@gmail.com')||( $password=='chris'&& $email=='cjprocak13@gmail.com')||($password=='jakob'&&$email=='jakob.horner@marquette.edu')||( $password=='connor'&& $email=='brinkcon@gmail.com')||( $password=='ben'&& $email=='benjamin.mol@marquette.edu'))
 		{  $app->redirect('/w');}
 	else {$app->redirect('/homeerror');}
 

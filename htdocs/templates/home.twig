@@ -2,15 +2,15 @@
 {% extends 'main.twig' %}
 
     {% block content %}
-    <div>
+    <div style="margin-left:10%">
         
-        <p>Enter Your Info to login</p>
+        <p style="margin-bottom:5px;">Enter Your Info to login</p>
       
 
-	<form action="" method="post">
-        <fieldset>
+	<form id="Selection" action="" method="post" >
+        <fieldset style="text-align:center;">
             <legend>Personal info</legend>
-            <label class="loginLabel"for="mail">Email: </label>
+            <label class="loginLabel" for="mail">Email: </label>
             <input type="email" id="mail" name="user_email">
 
 
@@ -20,7 +20,7 @@
 
         </fieldset>
     
-	  <button type="reset" id="reset">Clear</button>
+	  <button type="reset" id="reset" style="margin-top:-50px;">Clear</button>
       <button type="submit">Login</button>
 
     </form>
