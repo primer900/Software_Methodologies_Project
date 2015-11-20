@@ -25,6 +25,10 @@
   $fileMetadata = $dbxClient->getFile("/Software_Methodologies/Output/forecasted.csv", $f);
   fclose($f);
 
+<<<<<<< Updated upstream
+=======
+  //$data = csv_to_array("");
+>>>>>>> Stashed changes
   //print_r($fileMetadata);
 
 //  use Monolog\Logger;
