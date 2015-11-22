@@ -1,5 +1,5 @@
 <?php
-  include 'C:\xampp\htdocs\Software_Methodologies_Project\htdocs\templates\parse_csv.php';
+  include 'C:\xampp\xampp\htdocs\Software_Methodologies_Project\htdocs\templates\parse_csv.php';
 
   date_default_timezone_set("America/Chicago");
   require "vendor/autoload.php";
@@ -25,10 +25,10 @@
   $fileMetadata = $dbxClient->getFile("/Software_Methodologies/Output/forecasted.csv", $f);
   fclose($f);
 
-<<<<<<< Updated upstream
-=======
+//  <<<<<<< Updated upstream
+//=======
   //$data = csv_to_array("");
->>>>>>> Stashed changes
+//>>>>>>> Stashed changes
   //print_r($fileMetadata);
 
 //  use Monolog\Logger;
