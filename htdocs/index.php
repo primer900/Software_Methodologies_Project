@@ -25,14 +25,6 @@
   $fileMetadata = $dbxClient->getFile("/Software_Methodologies/Output/forecasted.csv", $f);
   fclose($f);
 
-  //print_r($fileMetadata);
-
-//  use Monolog\Logger;
-//  use Monolog\Handler\StreamHandler;
-//
-//  $log = new Logger('name');
-//  $log->pushHandler(new StreamHandler('app.txt', Logger::WARNING));
-//  $log->addWarning('Foob');
 
   $app = new \Slim\Slim( 
     array(
