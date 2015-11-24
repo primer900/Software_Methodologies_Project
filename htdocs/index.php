@@ -1,5 +1,5 @@
 <?php
-  include 'C:\xampp\xampp\htdocs\Software_Methodologies_Project\htdocs\templates\parse_csv.php';
+  include 'C:\xampp\htdocs\Software_Methodologies_Project\htdocs\templates\parse_csv.php';
 
   date_default_timezone_set("America/Chicago");
   require "vendor/autoload.php";
@@ -80,8 +80,8 @@
   //ADD ALL THE PAGES/////
 $app->post('/w', function() use($app){
 
-  $accessToken = "RhUHA_3bYAsAAAAAAAAAKFPP6W9Sv3yhCVVCun37FpkqOYSDvIYPanrtRw1GOFG7";
-  $dbxClient = new dbx\Client($accessToken, "Software_Methodologies_App");
+  //$accessToken = "RhUHA_3bYAsAAAAAAAAAKFPP6W9Sv3yhCVVCun37FpkqOYSDvIYPanrtRw1GOFG7";
+  //$dbxClient = new dbx\Client($accessToken, "Software_Methodologies_App");
 
     if(isset($_POST["filename"])) {
       //include($_POST['parse_csv.php'].'/common/configs/config_templates.inc.php');
