@@ -25,9 +25,6 @@
   $fileMetadata = $dbxClient->getFile("/Software_Methodologies/Output/forecasted.csv", $f);
   fclose($f);
 
-
-  //$data = csv_to_array("");
-
   //print_r($fileMetadata);
 
 //  use Monolog\Logger;
@@ -37,9 +34,9 @@
 //  $log->pushHandler(new StreamHandler('app.txt', Logger::WARNING));
 //  $log->addWarning('Foob');
 
-  $app = new \Slim\Slim( 
-    array(
-      'view' => new \Slim\Views\Twig()
+  $app = new \Slim\Slim(
+      array(
+          'view' => new \Slim\Views\Twig()
     )
   );
   $app->add(new \Slim\Middleware\SessionCookie());
@@ -74,7 +71,9 @@
   $app->get('/wind-speed', function() use($app){
      $app->render('wind_speed.twig');
   })->name('wind_speed');
-
+  $app->get('/upload', function() use($app){
+    $app->render('upload.html');
+  })->name('/upload');
 
 
   //ADD ALL THE PAGES/////
