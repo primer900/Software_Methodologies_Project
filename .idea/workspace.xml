@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d242e06f-825f-44c6-8f3d-de96a8959151" name="Default" comment="fixes for stuff.">
+    <list default="true" id="d242e06f-825f-44c6-8f3d-de96a8959151" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Software_Methodologies_Project.iws" />
@@ -417,7 +417,13 @@
       <option name="project" value="LOCAL" />
       <updated>1449187816515</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="fixes for stuff.">
+      <created>1449188202004</created>
+      <option name="number" value="00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1449188202004</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
