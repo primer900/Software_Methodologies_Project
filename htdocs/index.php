@@ -64,6 +64,9 @@
      $app->render('wind_speed.twig');
   })->name('wind_speed');
 
+  $app->get('/upload', function() use($app){
+    $app->render('upload.html');
+  })->name('/upload');
 
 
   //ADD ALL THE PAGES/////

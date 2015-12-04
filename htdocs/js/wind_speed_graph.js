@@ -3,6 +3,9 @@
  */
 $(function() {
     $('#container').highcharts ({
+        chart: {
+            zoomType: 'x'
+        },
         title: {
             text: 'Weekly Wind Speed',
             x: -20

@@ -6,6 +6,9 @@
  */
 $(function() {
     $('#container2').highcharts ({
+        chart: {
+            zoomType: 'x'
+        },
         title: {
             text: 'Weekly Wind Speed Forecast',
             x: -20
