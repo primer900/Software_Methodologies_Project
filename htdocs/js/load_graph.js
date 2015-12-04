@@ -1,5 +1,8 @@
 $(function () {
     $('#container').highcharts({
+        chart: {
+            zoomType: 'x'
+        },
         title: {
             text: 'Weekly Load',
             x: -20 //center
@@ -64,7 +67,7 @@ $(function () {
             }]
         },
         tooltip: {
-            valueSuffix: '°C'
+            valueSuffix: 'ï¿½C'
         },
         legend: {
             layout: 'vertical',

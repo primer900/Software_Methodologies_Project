@@ -3,6 +3,9 @@
  */
 $(function () {
     $('#container2').highcharts({
+        chart: {
+            zoomType: 'x'
+        },
         title: {
             text: 'Forecasted Load for the Week',
             x: -20 //center
@@ -66,7 +69,7 @@ $(function () {
             }]
         },
         tooltip: {
-            valueSuffix: '°C'
+            valueSuffix: 'ï¿½C'
         },
         legend: {
             layout: 'vertical',
