@@ -49,7 +49,10 @@
   })->name('home');
 
   $app->get('/w', function() use($app){
-    $app->render('weather.twig');
+    $mape = calculate_mape();
+    $app->render('weather.twig', array(
+      'mape' => $mape,
+    ));
   })->name('weather');
 
   $app->get('/homeerror', function() use($app){

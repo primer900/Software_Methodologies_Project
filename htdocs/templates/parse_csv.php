@@ -170,3 +170,21 @@ function csv_get_wind($filename='', $delimiter = ',') {
     fclose($handle);
     return $wind;
 }
+
+function calculate_mape() {
+    $actual = csv_get_load("actual.csv");
+    $forecast = csv_get_load("forecast.csv");
+    $count = 0;
+    $sum = 0;
+    while($count<168){
+
+        $k = ($actual[$count] - $forecast[$count]) / ($actual[$count]);//mape calculation
+        if( $k < 0 ){$k = $k*(-1);}//absolute value
+        $sum = $sum + $k;
+        $count = $count + 1;
+
+    }
+
+    $mape = ($sum/168) * 100;
+    return $mape;
+}
