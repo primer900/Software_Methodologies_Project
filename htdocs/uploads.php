@@ -16,12 +16,13 @@ if(isset($_POST["submit"])) {
 /*if (file_exists($target_file)) {
     echo "Sorry, file already exists.";
     $uploadOk = 0;
+    ?><button type = "button" value="Wind Speed" onclick="window.location.href='http://localhost:8000/upload'">Return</button><?php
 }
 */
 // Check file size
 /*if ($_FILES["fileToUpload"]["size"] > 500000) {
     echo "Sorry, your file is too large.";
-
+    ?><button type = "button" value="Wind Speed" onclick="window.location.href='http://localhost:8000/upload'">Return</button><?php
 
     $uploadOk = 0;
 }
@@ -32,15 +33,18 @@ if(isset($_POST["submit"])) {
 // Check if $uploadOk is set to 0 by an error
 if ($uploadOk == 0) {
 
-
     echo "Sorry, your file was not uploaded.";
+
+
+    ?><button type = "button" value="Wind Speed" onclick="window.location.href='http://localhost:8000/upload'">Return</button><?php
+
 // if everything is ok, try to upload file
 }
 if ($uploadOk==1) {
     $accessToken = "RhUHA_3bYAsAAAAAAAAAKFPP6W9Sv3yhCVVCun37FpkqOYSDvIYPanrtRw1GOFG7";
     $dbxClient = new dbx\Client($accessToken, "Software_Methodologies_App");
 
-
+    ?><button type = "button" value="Wind Speed" onclick="window.location.href='http://localhost:8000/upload'">Return</button><?php
 
     $f = fopen($_FILES["fileToUpload"]["tmp_name"], "rb");
     $result = $dbxClient->uploadFile("/Software_Methodologies/Input/actual.csv", dbx\WriteMode::force(), $f);
@@ -52,7 +56,7 @@ if ($uploadOk==1) {
     if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
         echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
 
-
+    ?><button type = "button" value="Wind Speed" onclick="window.location.href='http://localhost:8000/upload'">Return</button><?php
 
 
     } else {

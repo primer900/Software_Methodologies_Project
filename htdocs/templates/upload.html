@@ -1,11 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 
+  <head>
+
+    <meta charset = "utf-8">
+    <title> GasDay | COEN2610 </title>
+    <link rel="stylesheet" href="stylesheets/normalize.css">
+    <link rel="stylesheet" href="stylesheets/all.css">
+
+  </head>
+
 <body>
 <form action="uploads.php" method="post" enctype="multipart/form-data">
     Select file to upload:
     <input type="file" name="fileToUpload" id="fileToUpload">
     <input type="submit" value="Upload Data" name="submit">
+    <button type = "button" value="Wind Speed" onclick="window.location.href='http://localhost:8000/w'">Return</button>
 </form>
 </body>
 </html>
