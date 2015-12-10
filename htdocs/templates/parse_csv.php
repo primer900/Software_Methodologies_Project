@@ -171,9 +171,9 @@ function csv_get_wind($filename='', $delimiter = ',') {
     return $wind;
 }
 
-function calculate_mape() {
-    $actual = csv_get_load("actual.csv");
-    $forecast = csv_get_load("forecast.csv");
+function calculate_mape($actual_path, $forecast_path) {
+    $actual = csv_get_load($actual_path);
+    $forecast = csv_get_load($forecast_path);
     $count = 0;
     $sum = 0;
     while($count<168){

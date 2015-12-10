@@ -49,7 +49,7 @@
   })->name('home');
 
   $app->get('/w', function() use($app){
-    $mape = calculate_mape();
+    $mape = calculate_mape('actual.csv', 'forecast.csv');
     $app->render('weather.twig', array(
       'mape' => $mape,
     ));

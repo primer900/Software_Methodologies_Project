@@ -109,4 +109,10 @@ class IndexTests extends PHPUnit_Framework_TestCase
         $result = csv_get_wind('C:/xampp/file_does_not_exist.csv');
         $this->assertEquals($result[0], null);
     }
+
+    public function test_calculate_mape() {
+        $this->assertEquals(calculate_mape('C:/xampp/htdocs/Software_Methodologies_Project/htdocs/templates/actual.csv',
+            'C:/xampp/htdocs/Software_Methodologies_Project/htdocs/templates/forecast.csv'),
+            40.320369641366);
+    }
 }
